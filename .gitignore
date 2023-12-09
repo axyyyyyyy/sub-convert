@@ -1,4 +1,9 @@
+# dependencies
 node_modules/
+
+#profile
 profiles/
+
+#sub
 sub_content/
 config.json
