@@ -83,8 +83,9 @@ async function geturl(url) {
           const obj = sub_log.update_log.find((obj) => obj.name === sub_json.name);
 
 
-          //判断sub_log的last_update是否超过1天
-          if (obj && (new Date().getTime() - obj.last_update) < (24 * 60 * 60 * 1000 * 6)) {
+          //判断sub_log的last_update是否超过指定的时间
+          let interval = sub_json.update_interval ? sub_json.update_interval : 0;
+          if (obj && (interval == 0 || (new Date().getTime() - obj.last_update) < (24 * 60 * 60 * 1000 * sub_json.update_interval))) {
             console.log(`${sub_json.name} 缓存的订阅内容未过期，直接读取`);
             sub_str = fs.readFileSync(`./sub_content/${sub_json.name}`, 'utf8');
             console.log(`${sub_json.name} 获取缓存的订阅内容成功`);
