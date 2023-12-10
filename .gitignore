@@ -1,9 +1,13 @@
 # dependencies
 node_modules/
 
+#logs
+logs/
+
 #profile
 profiles/
 
 #sub
 sub_content/
-config.json
+release/
+
