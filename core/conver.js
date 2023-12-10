@@ -2,6 +2,7 @@ const axios = require("axios");
 const YAML = require("yaml");
 const fs = require('fs');
 const path = require('path');
+const { writeFile }= require('../utils/file');
 
 async function geturl(url) {
   let configFile = null;
@@ -192,7 +193,7 @@ async function geturl(url) {
   outbounds.splice(2,0,...new_group_list);
   outbounds.push(...all_node_list);
   // console.log(jsonData);
-  fs.writeFileSync(config_path, JSON.stringify(jsonData, null, 2))
+  writeFile(config_path, JSON.stringify(jsonData, null, 2))
 
   console.log("finish");
 
