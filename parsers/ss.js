@@ -21,7 +21,7 @@ function parse() {
 
         const result = parse1(line);
         
-        console.log(result);
+        // console.log(result);
 
         let proxy = {
             tag: result.name,

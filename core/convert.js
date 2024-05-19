@@ -128,14 +128,19 @@ async function geturl(url) {
           }
 
           if (proxy_protocol) {
-            console.log("节点协议：" + proxy_protocol);
+            // console.log("节点协议：" + proxy_protocol);
             // 根据节点的协议 动态引入对应的parse函数
             const parsers_path = path.join(process.cwd(), 'parsers',proxy_protocol);
+            if (!fs.existsSync(parsers_path + ".js")){
+              console.log("error: 协议解析模块不存在");
+              continue;
+            }
+
             const parse = require(parsers_path);
 
             var res = parse().parse(sub);
 
-            console.log(res);
+            // console.log(res);
 
             //判断all_tag_list是否存在当前tag
             if (all_tag_list.indexOf(res.tag) != -1) {
@@ -149,7 +154,8 @@ async function geturl(url) {
               all_tag_list.push(res.tag);
             }
           } else {
-            console.log("error: 获取节点协议失败");
+            console.log(proxy_protocol);
+            console.log("error: 获取节点协议失败"+proxy_protocol);
           }
 
         }
