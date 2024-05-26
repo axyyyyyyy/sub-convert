@@ -1,7 +1,7 @@
-const axios = require("axios");
-const YAML = require("yaml");
-const fs = require('fs');
-const path = require('path');
+import axios from "axios";
+import YAML from "yaml";
+import fs from 'fs';
+import path from 'path';
 
 
 async function main() {

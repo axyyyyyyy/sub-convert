@@ -1,7 +1,7 @@
-const url = require('url');
-const querystring = require('querystring');
-const { Base64 } = require('js-base64');
-const { getIfNotBlank, isPresent, isNotBlank, getIfPresent } = require('../utils/sub_store/index.js');
+import url from 'url';
+import querystring from 'querystring';
+import { Base64 } from 'js-base64';
+import { getIfNotBlank, isPresent, isNotBlank, getIfPresent } from '../utils/sub_store/index.js';
 
 function parse() {
     const name = 'URI SS Parser';
@@ -112,4 +112,4 @@ function parse() {
 }
 
 
-module.exports = parse;
+export default parse;
