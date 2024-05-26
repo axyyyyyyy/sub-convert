@@ -1,4 +1,4 @@
-
+<!-- 
 # sub_convert
 
 sub_convert 订阅转换
@@ -20,5 +20,5 @@ sub_convert 订阅转换
 
 - [ ] sub2clash
 - [ ] clash2clash
-- [ ] clash2surfboard
+- [ ] clash2surfboard -->
 
